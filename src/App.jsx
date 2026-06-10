@@ -1,30 +1,31 @@
-import { Routes, Route, Link } from "react-router-dom";
-
-function Home() {
-  return <h1>Welcome to mpctech.in 🚀</h1>;
-}
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function Emi() {
-  return <h1>EMI Calculator</h1>;
+  return <h2>EMI Calculator</h2>;
 }
-
 function Todo() {
-  return <h1>Todo App</h1>;
+  return <h2>Todo App</h2>;
+}
+function Expense() {
+  return <h2>Expense Manager</h2>;
+}
+function Interview() {
+  return <h2>.NET Interview Q&A</h2>;
 }
 
 function App() {
   return (
     <>
-      <nav style={{ padding: "10px", background: "#eee" }}>
-        <Link to="/">Home</Link>{" | "}
-        <Link to="/emi">EMI</Link>{" | "}
-        <Link to="/todo">Todo</Link>
-      </nav>
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/emi" element={<Emi />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/expense" element={<Expense />} />
+        <Route path="/interview" element={<Interview />} />
       </Routes>
     </>
   );
