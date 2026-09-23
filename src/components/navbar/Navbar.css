@@ -1,0 +1,52 @@
+/* Sidebar Layout Container */
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #eee;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  /* Sidebar Title Header */
+  .sidebar-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Individual Links Style */
+  .sidebar-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #1f52b7;
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #e2e8f0; /* Simple gray hover highlight */
+  }
+  
+  /* Specific instruction to push login link down */
+  .login-link {
+    margin-top: auto;
+  }
+  
+  /* Content Container to shift pages past the sidebar */
+  .main-content-layout {
+    margin-left: 220px;
+    padding: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
