@@ -7,7 +7,7 @@ export default function Navbar() {
       <Link to="/emi">EMI</Link>{" | "}
       <Link to="/todo">Todo</Link>{" | "}
       <Link to="/expense">Expense</Link>{" | "}
-      <Link to="/interview">.NET Q&A</Link>
+      <Link to="/my-website">.NET Q&A</Link>
     </nav>
   );
 }
