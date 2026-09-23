@@ -25,7 +25,7 @@ function App() {
         <Route path="/emi" element={<Emi />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/expense" element={<Expense />} />
-        <Route path="/interview" element={<Interview />} />
+        <Route path="/my-website" element={<Dotnet-Interview />} />
       </Routes>
     </>
   );
