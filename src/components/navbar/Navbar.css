@@ -1,5 +1,7 @@
-/* Sidebar Layout Container */
-.sidebar-nav {
+/* ==========================================================================
+   DESKTOP STYLES (Default / Large screens)
+   ========================================================================== */
+   .sidebar-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,41 +14,113 @@
     gap: 15px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+    z-index: 1000;
   }
   
-  /* Sidebar Title Header */
+  .sidebar-nav.collapsed {
+    width: 70px;
+    padding: 20px 8px;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    min-height: 28px;
+  }
+  
+  .sidebar-nav.collapsed .sidebar-header {
+    justify-content: center;
+  }
+  
   .sidebar-title {
     font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.3rem;
+    color: #e01818;
+    white-space: nowrap;
   }
   
-  /* Individual Links Style */
+  .toggle-btn {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
   .sidebar-link {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     padding: 8px 12px;
-    border-radius: 4px;
-    background-color: #1f52b7;
+    border-radius: 10px;
+    background-color: #ffffff;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
   }
   
   .sidebar-link:hover {
-    background-color: #e2e8f0; /* Simple gray hover highlight */
+    background-color: #1c66c7;
   }
   
-  /* Specific instruction to push login link down */
+  .sidebar-nav.collapsed .sidebar-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+  
   .login-link {
     margin-top: auto;
   }
   
-  /* Content Container to shift pages past the sidebar */
-  .main-content-layout {
-    margin-left: 220px;
-    padding: 30px;
-    min-height: 100vh;
-    box-sizing: border-box;
+  /* ==========================================================================
+     MOBILE & TABLET RESPONSIVE STYLES (Screens smaller than 768px)
+     ========================================================================== */
+  @media (max-width: 768px) {
+    .sidebar-nav {
+      position: relative; /* Removes the screen-pinning on mobile devices */
+      width: 100% !important; /* Forces layout to fill top horizontal row */
+      height: auto;
+      padding: 15px;
+      flex-direction: row; /* Arranges nav items horizontally */
+      flex-wrap: wrap; /* Allows wrap overflow if routes are numerous */
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Hide the desktop collapse arrows on mobile phone viewports */
+    .toggle-btn {
+      display: none; 
+    }
+  
+    .sidebar-header {
+      width: 100%; /* Pushes the brand header onto its own row */
+      margin-bottom: 5px;
+    }
+  
+    .sidebar-link {
+      flex: 1 1 auto; /* Allows links to grow and sit side-by-side */
+      justify-content: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .login-link {
+      margin-top: 0; /* Clear desktop alignment rule */
+    }
   }
