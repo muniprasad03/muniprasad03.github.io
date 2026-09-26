@@ -1,15 +1,17 @@
 import { useState } from "react"; // Added useState
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import "./index.css";
-
 // Core Components
 import Calculator from "./components/calculator/Calculator";
 import Emi from "./components/emi/Emi";
 import Expense from "./components/expense/Expense";
+import Todo from "./components/todo/todo";
+import "./index.css";
+
+
 // Page imports
 import Home from "./pages/Home";
-import Todo from "./pages/Todo";
+
 import Login from "./pages/Login";
 
 
